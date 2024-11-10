@@ -1,11 +1,11 @@
 import React from "react";
 
-function Payment() {
+function Categories() {
   return (
     <div>
-    PAYPAY
+    
     </div>
   );
 }
 
-export default Payment;
+export default Categories;

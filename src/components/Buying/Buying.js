@@ -1,11 +1,11 @@
 import React from "react";
 
-function ecommerce() {
+function Buying() {
   return (
     <div>
-    
+    PAYPAY
     </div>
   );
 }
 
-export default ecommerce;
+export default Buying;
