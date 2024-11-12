@@ -5,15 +5,15 @@ function Footer() {
   return (
        <div>
      
-     <footer className="bg-gray-800 p-6 mt-10 text-gray-400">
+     <footer className="bg-green-800 p-6 mt-10 text-gray-400">
         <div className="flex flex-wrap justify-around">
           <div>
             <h3 className="text-white font-semibold mb-2">MENU</h3>
             <ul>
               <li><a href="#" className="hover:text-white">Home</a></li>
               <li><a href="#" className="hover:text-white">Categories</a></li>
-              <li><a href="#" className="hover:text-white">E-Market</a></li>
-              <li><a href="#" className="hover:text-white">About Us</a></li>
+              <li><a href="#" className="hover:text-white">ProductListing</a></li>
+              <li><a href="#" className="hover:text-white">AboutUs</a></li>
             </ul>
           </div>
           <div>
