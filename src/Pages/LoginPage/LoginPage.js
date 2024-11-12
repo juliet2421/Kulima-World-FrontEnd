@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const LoginPage = () => {
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('Loginpage.jpg')" }}>
+    <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/Loginpage.jpg')" }}>
       <div className="bg-gray-50 bg-opacity-75 p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-2xl font-semibold text-center mb-6">KULIMA WORLD</h1>
         <form>
