@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://example.com/background-image.jpg')" }}>
+    <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('Loginpage.jpg')" }}>
       <div className="bg-gray-50 bg-opacity-75 p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-2xl font-semibold text-center mb-6">KULIMA WORLD</h1>
         <form>
@@ -34,7 +37,7 @@ const LoginPage = () => {
           <button type="submit" className="w-full py-3 bg-green-500 text-white rounded hover:bg-green-600 transition">Sign in</button>
           <div className="text-center mt-4">
             <p className="text-gray-700">
-              Don't have an account yet? <a href="#" className="text-green-500 hover:underline">Sign up</a>
+              Don't have an account yet? <Link to="/SignUp" className="text-green-500 hover:underline">Sign up</Link>
             </p>
           </div>
         </form>

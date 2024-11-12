@@ -1,9 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 function SignUp() {
   const [formData, setFormData] = useState({
-    name: '',
+    firstname: '',
+    surname: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -24,9 +27,10 @@ function SignUp() {
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
+
           {/* Name Input */}
           <div>
-            <label htmlFor="name" className="block text-gray-700">Name</label>
+            <label htmlFor="firstname" className="block text-gray-700">FirstName</label>
             <input
               type="text"
               name="name"
@@ -34,6 +38,19 @@ function SignUp() {
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder="Enter your name"
+              required
+            />
+          </div>
+          {/* surname Input */}
+          <div>
+            <label htmlFor="email" className="block text-gray-700">Surname</label>
+            <input
+              type="text"
+              name="surname"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Surname here"
               required
             />
           </div>
@@ -47,7 +64,7 @@ function SignUp() {
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Enter your email"
+              placeholder="name@gmal.com"
               required
             />
           </div>
@@ -92,7 +109,7 @@ function SignUp() {
         {/* Login Link */}
         <p className="text-center text-gray-600 mt-4">
           Already have an account?{' '}
-          <a href="/login" className="text-green-500 hover:underline">Log In</a>
+          <Link to="/LoginPage" className="text-green-500 hover:underline">Log In</Link>
         </p>
       </div>
     </div>

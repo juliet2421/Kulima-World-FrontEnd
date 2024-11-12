@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Welcome from "./Pages/Welcome/Welcome";
+import AboutUs from "./Pages/AboutUs";
 import LoginPage from "./Pages/LoginPage/LoginPage";
-import HomePage from "./Pages/HomePage/HomePage";
+import Home from "./Pages/Home/Home";
 import Buying from "./Pages/Buying";
 import Notification from "./Pages/Notification";
 import Header from "./components/Header";
@@ -22,11 +24,13 @@ function App() {
           <Header />
 
           <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="AboutUs" element={<AboutUs />} />
             <Route path="LoginPage" element={<LoginPage />} />
             <Route path="Buying" element={<Buying />} />
             <Route path="Categories" element={<Categories />} />
             <Route path="Dashboard" element={<DashBoard />} />
-            <Route path="/" element={<HomePage />} />
+            <Route path="Home" element={<Home/>} />
             <Route path="MessagingSystem" element={<MessagingSystem />} />
             <Route path="Notification" element={<Notification />} />
             <Route path="Posting" element={<Posting />} />
