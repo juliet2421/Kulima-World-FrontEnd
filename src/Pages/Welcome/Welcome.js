@@ -4,8 +4,19 @@ import home1 from "./home1.jpg";
 import home2 from "./home2.webp";
 import home3 from "./home3.jpg";
 import home4 from "./home4.jpg";
+import TopProduct1 from "./TopProduct1.jpg";
+//import TopProduct2 from "./TopProduct2.jpg";
+import TopProduct3 from "./TopProduct3.jpg";
+import TopProduct4 from "./TopProduct4.jpg";
 
 const bannerImages = [home1, home2, home3, home4];
+
+const products = [
+  { id: 1, name: "Fresh Tomatoes", price: "MK2000/kg", location: "Lilongwe, Mitundu", image: TopProduct1 },
+  //{ id: 2, name: "Sheep", price: "MK32,000", location: "Chikwawa, Dyeratu", image: TopProduct2 },
+  { id: 3, name: "Seeds", price: "MK20,000/5kg", location: "Kulima Agro Dealers", image: TopProduct3 },
+  { id: 4, name: "Petrol Tractor", price: "MK6,257,000", location: "Farm Machines Company", image: TopProduct4 },
+];
 
 function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -13,14 +24,14 @@ function HomePage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
-    }, 4000); // Change every 4 seconds
+    }, 4000); // Rotate banner images every 4 seconds
 
-    return () => clearInterval(interval); // Clear interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      {/* Banner */}
+      {/* Rotating Banner */}
       <div className="relative bg-white rounded-lg overflow-hidden">
         <img
           src={bannerImages[currentImageIndex]}
@@ -43,34 +54,18 @@ function HomePage() {
         </Link>
       </div>
 
-      {/* Top Products Section */}
+      {/* Static Top Products Section */}
       <section className="py-10">
         <h2 className="text-center text-xl font-semibold mb-6">TOP PRODUCTS</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-4">
-          <div className="bg-gray-700 p-4 rounded text-center">
-            <img src="/sheep.jpg" alt="Fresh Tomatoes" className="w-full h-32 object-cover rounded mb-2" />
-            <p>Fresh Tomatoes</p>
-            <p>MK2000/kg</p>
-            <p>Lilongwe, mitundu</p>
-          </div>
-          <div className="bg-gray-700 p-4 rounded text-center">
-            <img src="/sheep.jpg" alt="Sheep" className="w-full h-32 object-cover rounded mb-2" />
-            <p>Sheep</p>
-            <p>MK32,000</p>
-            <p>Chikwawa, Dyeratu</p>
-          </div>
-          <div className="bg-gray-700 p-4 rounded text-center">
-            <img src="/seeds.jpg" alt="Seeds" className="w-full h-32 object-cover rounded mb-2" />
-            <p>Seeds</p>
-            <p>MK20,000/5kg</p>
-            <p>Kulima Agro Dealers</p>
-          </div>
-          <div className="bg-gray-700 p-4 rounded text-center">
-            <img src="/tractor.jpg" alt="Petrol Tractor" className="w-full h-32 object-cover rounded mb-2" />
-            <p>Petrol Tractor</p>
-            <p>MK6,257,000</p>
-            <p>Farm Machines Company</p>
-          </div>
+          {products.map((product) => (
+            <div key={product.id} className="bg-green-700 p-4 rounded text-center">
+              <img src={product.image} alt={product.name} className="w-full h-32 object-cover rounded mb-2" />
+              <p>{product.name}</p>
+              <p>{product.price}</p>
+              <p>{product.location}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

@@ -18,7 +18,7 @@ function AboutUs() {
         </h1>
         
         <p className="text-gray-700 text-lg mb-4">
-          Welcome to [Your Marketplace Name], the agricultural marketplace designed to empower farmers and connect them with buyers directly. We believe in fostering a community where quality produce and sustainable agricultural practices thrive.
+          Welcome to Kulima World!!, the agricultural marketplace designed to empower farmers and connect them with buyers directly. We believe in fostering a community where quality produce and sustainable agricultural practices thrive.
         </p>
 
         <section className="mt-6">
