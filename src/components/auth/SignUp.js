@@ -22,58 +22,40 @@ function SignUp() {
     // Add form submission logic here (e.g., API call)
     console.log('Form submitted:', formData);
   };
-
   return (
-    <div 
-      className="flex items-center justify-center min-h-screen bg-gray-100 bg-cover bg-center"
-      style={{ backgroundImage: `url("/Loginpage.jpg")` }}
-    >
-      <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-md">
+    
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
 
-          {/* First Name Input */}
+          {/* Name Input */}
           <div>
-            <label htmlFor="firstname" className="block text-gray-700">First Name</label>
+            <label htmlFor="firstname" className="block text-gray-700">FirstName</label>
             <input
               type="text"
-              name="firstname"
-              value={formData.firstname}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Enter your first name"
+              placeholder="Enter your name"
               required
             />
           </div>
-
-          {/* Surname Input */}
+          {/* surname Input */}
           <div>
-            <label htmlFor="surname" className="block text-gray-700">Surname</label>
+            <label htmlFor="email" className="block text-gray-700">Surname</label>
             <input
               type="text"
               name="surname"
-              value={formData.surname}
+              value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Enter your surname"
+              placeholder="Surname here"
               required
             />
           </div>
-
-          {/* Username Input */}
-          <div>
-            <label htmlFor="username" className="block text-gray-700">Username</label>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Choose a username"
-              required
-            />
-          </div>
-
+          
           {/* Email Input */}
           <div>
             <label htmlFor="email" className="block text-gray-700">Email</label>
@@ -83,7 +65,7 @@ function SignUp() {
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="name@example.com"
+              placeholder="name@gmal.com"
               required
             />
           </div>
@@ -128,11 +110,15 @@ function SignUp() {
         {/* Login Link */}
         <p className="text-center text-gray-600 mt-4">
           Already have an account?{' '}
-          <Link to="/LoginPage" className="text-green-500 hover:underline">Log In</Link>
+          <Link to="/signup" className="text-green-500 hover:underline">Log In</Link>
         </p>
       </div>
     </div>
   );
 }
+    <div>
+    
+    </div>
+ 
 
 export default SignUp;

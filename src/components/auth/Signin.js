@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const LoginPage = () => {
+const Signin = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/Loginpage.jpg')" }}>
@@ -37,7 +37,7 @@ const LoginPage = () => {
           <button type="submit" className="w-full py-3 bg-green-500 text-white rounded hover:bg-green-600 transition">Sign in</button>
           <div className="text-center mt-4">
             <p className="text-gray-700">
-              Don't have an account yet? <Link to="/SignUp" className="text-green-500 hover:underline">Sign up</Link>
+              Don't have an account yet? <Link to="/signup" className="text-green-500 hover:underline">Sign up</Link>
             </p>
           </div>
         </form>
@@ -46,4 +46,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Signin;

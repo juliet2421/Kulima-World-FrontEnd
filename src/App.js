@@ -1,48 +1,53 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Welcome from "./Pages/Welcome/Welcome";
-import AboutUs from "./Pages/AboutUs";
-import LoginPage from "./Pages/LoginPage/LoginPage";
-import Home from "./Pages/Home/Home";
-import Buying from "./Pages/Buying";
-import Notification from "./Pages/Notification";
-import Header from "./components/Header";
-import Posting from "./Pages/Posting";
-import MessagingSystem from "./Pages/MessagingSystem";
-import DashBoard from "./Pages/DashBoard";
-import SignUp from "./Pages/SignUp";
-import ProductListing from "./Pages/ProductListing";
-import Categories from "./Pages/Categories";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route,useLocation} from "react-router-dom";
+import AboutUsPage from "./Pages/AboutUsPage";
+import CategoryPage from "./Pages/CategoryPage";
+import DashBoard from "./components/dashboard/DashBoard";
+import HomePage from "./Pages/HomePage";
+import SignUpPage from "./Pages/SignUpPage";
+import SignInPage from "./Pages/SignInPage";
+import WelcomPage from "./Pages/WelcomPage";
+import PriviteRouter from "./components/utils/PriviteRouter";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import {  } from "react-router-dom";
+import DashboardPage from "./Pages/DashboardPage";
+
 
 
 function App() {
   return (
     <div>
-      <Router>
-        <div>
-          <Header />
-
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="AboutUs" element={<AboutUs />} />
-            <Route path="LoginPage" element={<LoginPage />} />
-            <Route path="Buying" element={<Buying />} />
-            <Route path="Categories" element={<Categories />} />
-            <Route path="Dashboard" element={<DashBoard />} />
-            <Route path="Home" element={<Home/>} />
-            <Route path="MessagingSystem" element={<MessagingSystem />} />
-            <Route path="Notification" element={<Notification />} />
-            <Route path="Posting" element={<Posting />} />
-            <Route path="ProductListing" element={<ProductListing />} />
-            <Route path="SignUp" element={<SignUp />} />
-          </Routes>
-
-          <Footer />
-        </div>
-      </Router>
+      <BrowserRouter>  
+        <MainContent/>
+      </BrowserRouter>    
     </div>
   );
+
+  function MainContent(){
+    const location = useLocation()
+    const noNave = ['/signup','/signin','/dashbaord']
+    const hideNave = noNave.some((path) =>location.pathname.startsWith(path))
+    const hideFooter = noNave.some((path) => location.pathname.startsWith(path))
+    return (
+      <div>
+        {!hideNave && <Header/>}
+        <Routes>
+          <Route element ={<PriviteRouter/>}>  
+            {/**all private routs */}\
+            <Route path="/dashbaord/*" element ={<DashboardPage/>}/>
+            <Route path="/home" element ={<HomePage/>}/>
+            <Route path="/category" element ={<CategoryPage/>}/>
+          </Route>
+          <Route path="/" element ={<WelcomPage/>}/>
+          <Route path="/about" element ={<AboutUsPage/>}/>  
+          <Route path="/signup" element ={<SignUpPage/>}/>
+          <Route path="/signin" element ={<SignInPage/>}/>
+        </Routes>
+        {!hideFooter && <Footer/>}
+      </div>
+    )
+  }
 }
 
 export default App;

@@ -9,10 +9,10 @@ function Header() {
        <nav className="space-x-12">
          <Link to="/" className="text-gray-300 hover:text-white">WELCOME</Link>
          
-         <Link to="AboutUs" className="text-gray-300 hover:text-white">ABOUT US</Link>
+         <Link to="About" className="text-gray-300 hover:text-white">ABOUT US</Link>
          
        </nav>
-       <Link to= "LoginPage"> <button className="bg-green-500 text-white py-2 px-4 rounded">LOGIN</button></Link>
+       <Link to= "signin"> <button className="bg-green-500 text-white py-2 px-4 rounded">LOGIN</button></Link>
      </header>
      </div>
 

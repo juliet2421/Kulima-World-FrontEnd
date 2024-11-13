@@ -1,11 +1,11 @@
 import React from "react";
 
-function DashBoard() {
+function AboutUs() {
   return (
     <div>
-    
+   
     </div>
   );
 }
 
-export default DashBoard;
+export default AboutUs;
