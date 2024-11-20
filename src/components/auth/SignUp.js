@@ -1,15 +1,14 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [formData, setFormData] = useState({
-    firstname: '',
-    surname: '',
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    firstname: "",
+    surname: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) => {
@@ -20,59 +19,74 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add form submission logic here (e.g., API call)
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
-  return (
-    
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
 
+  return (
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/Loginpage.jpg')",
+      }}
+    >
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+          Create an Account
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name Input */}
           <div>
-            <label htmlFor="firstname" className="block text-gray-700">FirstName</label>
+            <label htmlFor="firstname" className="block text-gray-700">
+              FirstName
+            </label>
             <input
               type="text"
-              name="name"
-              value={formData.name}
+              name="firstname"
+              value={formData.firstname}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Enter your name"
+              placeholder="Enter your first name"
               required
             />
           </div>
-          {/* surname Input */}
+
+          {/* Surname Input */}
           <div>
-            <label htmlFor="email" className="block text-gray-700">Surname</label>
+            <label htmlFor="surname" className="block text-gray-700">
+              Surname
+            </label>
             <input
               type="text"
               name="surname"
-              value={formData.email}
+              value={formData.surname}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Surname here"
+              placeholder="Enter your surname"
               required
             />
           </div>
-          
+
           {/* Email Input */}
           <div>
-            <label htmlFor="email" className="block text-gray-700">Email</label>
+            <label htmlFor="email" className="block text-gray-700">
+              Email
+            </label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="name@gmal.com"
+              placeholder="name@gmail.com"
               required
             />
           </div>
 
           {/* Password Input */}
           <div>
-            <label htmlFor="password" className="block text-gray-700">Password</label>
+            <label htmlFor="password" className="block text-gray-700">
+              Password
+            </label>
             <input
               type="password"
               name="password"
@@ -86,7 +100,9 @@ function SignUp() {
 
           {/* Confirm Password Input */}
           <div>
-            <label htmlFor="confirmPassword" className="block text-gray-700">Confirm Password</label>
+            <label htmlFor="confirmPassword" className="block text-gray-700">
+              Confirm Password
+            </label>
             <input
               type="password"
               name="confirmPassword"
@@ -106,19 +122,17 @@ function SignUp() {
             Sign Up
           </button>
         </form>
-        
+
         {/* Login Link */}
         <p className="text-center text-gray-600 mt-4">
-          Already have an account?{' '}
-          <Link to="/signup" className="text-green-500 hover:underline">Log In</Link>
+          Already have an account?{" "}
+          <Link to="/login" className="text-green-500 hover:underline">
+            Log In
+          </Link>
         </p>
       </div>
     </div>
   );
 }
-    <div>
-    
-    </div>
- 
 
 export default SignUp;

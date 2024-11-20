@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route,useLocation} from "react-router-dom";
-import AboutUsPage from "./Pages/AboutUsPage";
+import AboutUs from "./Pages/AboutUs";
 import CategoryPage from "./Pages/CategoryPage";
 import DashBoard from "./components/dashboard/DashBoard";
 import HomePage from "./Pages/HomePage";
@@ -40,7 +40,7 @@ function App() {
             <Route path="/category" element ={<CategoryPage/>}/>
           </Route>
           <Route path="/" element ={<WelcomPage/>}/>
-          <Route path="/about" element ={<AboutUsPage/>}/>  
+          <Route path="/about" element ={<AboutUs/>}/>  
           <Route path="/signup" element ={<SignUpPage/>}/>
           <Route path="/signin" element ={<SignInPage/>}/>
         </Routes>
