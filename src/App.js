@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { BrowserRouter, Routes, Route,useLocation} from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import CategoryPage from "./Pages/CategoryPage";
@@ -12,8 +13,9 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import {  } from "react-router-dom";
 import DashboardPage from "./Pages/DashboardPage";
-
-
+import EditForm from "./components/dashboard/EditForm";
+import AddProduct from "./components/dashboard/AddProduct";
+import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
 
   function MainContent(){
     const location = useLocation()
-    const noNave = ['/signup','/signin','/dashbaord']
+    const noNave = ['/signup','/signin','/dashboard','/addProduct','/editProduct']
     const hideNave = noNave.some((path) =>location.pathname.startsWith(path))
     const hideFooter = noNave.some((path) => location.pathname.startsWith(path))
     return (
@@ -34,8 +36,8 @@ function App() {
         {!hideNave && <Header/>}
         <Routes>
           <Route element ={<PriviteRouter/>}>  
-            {/**all private routs */}\
-            <Route path="/dashbaord/*" element ={<DashboardPage/>}/>
+            {/**all private routs */}
+            <Route path="/dashboard/*" element={<DashboardPage />} />
             <Route path="/home" element ={<HomePage/>}/>
             <Route path="/category" element ={<CategoryPage/>}/>
           </Route>
@@ -43,6 +45,8 @@ function App() {
           <Route path="/about" element ={<AboutUs/>}/>  
           <Route path="/signup" element ={<SignUpPage/>}/>
           <Route path="/signin" element ={<SignInPage/>}/>
+          <Route path="/editProduct" element={<EditForm />} />
+          <Route path="/addProduct" element={<AddProduct />} />
         </Routes>
         {!hideFooter && <Footer/>}
       </div>
@@ -51,3 +55,4 @@ function App() {
 }
 
 export default App;
+ 
