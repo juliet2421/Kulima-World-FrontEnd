@@ -13,7 +13,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import {  } from "react-router-dom";
 import DashboardPage from "./Pages/DashboardPage";
-import EditForm from "./components/dashboard/EditForm";
+import EditForm from "./components/dashboard/editForm";
 import AddProduct from "./components/dashboard/AddProduct";
 import 'font-awesome/css/font-awesome.min.css';
 

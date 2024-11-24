@@ -7,7 +7,7 @@ function Header() {
        <header className="bg-green-800 p-4 flex justify-between items-center">
        <img src="/logo.png" alt="Kulima World Logo" className="w-32" />
        <nav className="space-x-12">
-         <Link to="/" className="text-gray-300 hover:text-white">WELCOME</Link>
+         //<Link to="/" className="text-gray-300 hover:text-white">WELCOME</Link>
          
          <Link to="About" className="text-gray-300 hover:text-white">ABOUT US</Link>
          

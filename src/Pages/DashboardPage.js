@@ -2,7 +2,7 @@ import React from "react";
 import DashBoard from "../components/dashboard/DashBoard";
 import SideBar from "../components/SideBar/SideBar";
 import { Routes, Route } from "react-router-dom";
-import Manage from "../components/dashboard/Manage.mjs";
+import Manage from "../components/dashboard/Manage.js";
 import { useLocation } from "react-router-dom";
 
 export default function DashboardPage() {
