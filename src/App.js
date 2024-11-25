@@ -15,6 +15,7 @@ import EditForm from "./components/dashboard/editForm";
 import AddProduct from "./components/dashboard/AddProduct";
 import 'font-awesome/css/font-awesome.min.css';
 import PaySummary from "./components/Message/PaySummary";
+import ContactPage from "./components/Message/ContactPage";
 function App() {
   return (
     <BrowserRouter>
@@ -59,7 +60,10 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/editProduct" element={<EditForm />} />
-          <Route path="/addProduct" element={<AddProduct />} />
+          <Route path="/addProduct" element={<AddProduct />} />;
+          <Route path="/PaySummary" element={<PaySummary />} />
+          <Route path="/ContactPage" element={< ContactPage />} />
+          
         </Routes>
 
         {/* Show Footer only when not in hidden routes */}
