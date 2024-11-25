@@ -14,7 +14,7 @@ import Footer from "./components/footer/Footer";
 import EditForm from "./components/dashboard/editForm";
 import AddProduct from "./components/dashboard/AddProduct";
 import 'font-awesome/css/font-awesome.min.css';
-
+import PaySummary from "./components/Message/PaySummary";
 function App() {
   return (
     <BrowserRouter>
