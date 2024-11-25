@@ -39,7 +39,7 @@ function HomePage() {
           <div className="mt-8 space-y-4">
             {/* Get Started Button */}
             <Link 
-              to="/SignInPage" 
+              to="/SignIn" 
               className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
             >
               Get Started
@@ -47,7 +47,7 @@ function HomePage() {
 
             {/* Learn More About Us Button */}
             <Link 
-              to="/AboutUs" 
+              to="/About Us" 
               className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
             >
               Learn More About Us
