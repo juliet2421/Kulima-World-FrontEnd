@@ -47,7 +47,7 @@ function HomePage() {
 
             {/* Learn More About Us Button */}
             <Link 
-              to="/About Us" 
+              to="/About" 
               className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
             >
               Learn More About Us
