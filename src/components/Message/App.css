@@ -96,7 +96,7 @@
 /*ContactPage*/
 /* Full-Screen Container */
 .contact-container {
-  background: linear-gradient(135deg, #5fff64, #feb47b); /* Warm gradient */
+  background: linear-gradient(135deg, #5fff64,); /* Warm gradient */
   font-family: "Arial", sans-serif;
   color: #fff;
 }
