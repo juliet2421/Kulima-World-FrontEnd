@@ -1,11 +1,10 @@
 import React from "react";
 
-function HomePage() {
+function Posting() {
   return (
     <div>
-    
+    Posting
     </div>
   );
 }
-
-export default HomePage;
+export default Posting;

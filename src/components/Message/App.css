@@ -4,8 +4,12 @@
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  background: linear-gradient(135deg, #0bc954, #25fcfc); /* Gradient background */
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(
+    135deg,
+    #0bc954,
+    #25fcfc
+  ); /* Gradient background */
+  font-family: "Arial", sans-serif;
   color: #fff;
 }
 
@@ -92,8 +96,8 @@
 /*ContactPage*/
 /* Full-Screen Container */
 .contact-container {
-  background: linear-gradient(135deg, #5fff64, #feb47b); /* Warm gradient */
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #5fff64,); /* Warm gradient */
+  font-family: "Arial", sans-serif;
   color: #fff;
 }
 
@@ -147,7 +151,6 @@
   border-color: #ff7e5f;
   box-shadow: 0 0 5px rgba(255, 126, 95, 0.5);
 }
-
 
 /* Textarea Styling */
 .form-group textarea {

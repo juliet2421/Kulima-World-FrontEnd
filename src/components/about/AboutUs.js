@@ -8,6 +8,7 @@ function AboutUs() {
         
         {/* Back to Home Button */}
         <div className="mb-6">
+          
           <Link to="/" className="text-green-500 hover:underline">
             &larr; Back to Home
           </Link>

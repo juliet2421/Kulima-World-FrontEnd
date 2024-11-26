@@ -1,52 +1,75 @@
 import React from "react";
-import { BrowserRouter, Routes, Route,useLocation} from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import CategoryPage from "./Pages/CategoryPage";
-import DashBoard from "./components/dashboard/DashBoard";
+import DashboardPage from "./Pages/DashboardPage";
 import HomePage from "./Pages/HomePage";
 import SignUpPage from "./Pages/SignUpPage";
 import SignInPage from "./Pages/SignInPage";
 import WelcomPage from "./Pages/WelcomPage";
-import PriviteRouter from "./components/utils/PriviteRouter";
+import PrivateRouter from "./components/utils/PriviteRouter";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import {  } from "react-router-dom";
-import DashboardPage from "./Pages/DashboardPage";
-
-
-
+import EditForm from "./components/dashboard/editForm";
+import AddProduct from "./components/dashboard/AddProduct";
+import 'font-awesome/css/font-awesome.min.css';
+import PaySummary from "./components/Message/PaySummary";
+import ContactPage from "./components/Message/ContactPage";
 function App() {
   return (
-    <div>
-      <BrowserRouter>  
-        <MainContent/>
-      </BrowserRouter>    
-    </div>
+    <BrowserRouter>
+      <MainContent />
+    </BrowserRouter>
   );
 
-  function MainContent(){
-    const location = useLocation()
-    const noNave = ['/signup','/signin','/dashbaord']
-    const hideNave = noNave.some((path) =>location.pathname.startsWith(path))
-    const hideFooter = noNave.some((path) => location.pathname.startsWith(path))
+  function MainContent() {
+    const location = useLocation();
+
+    // Define the routes where the header and footer should be hidden
+    const hiddenRoutes = [
+      '/',
+      '/signup',
+      '/signin',
+      '/dashboard',
+      '/addProduct',
+      '/editProduct',
+    ];
+
+    // Check if the current route matches any of the hidden routes
+    const shouldHideHeaderFooter = hiddenRoutes.some((path) =>
+      location.pathname.startsWith(path)
+    );
+
     return (
       <div>
-        {!hideNave && <Header/>}
+        {/* Show Header only when not in hidden routes */}
+        {!shouldHideHeaderFooter && <Header />}
+
+        {/* Routes for the application */}
         <Routes>
-          <Route element ={<PriviteRouter/>}>  
-            {/**all private routs */}\
-            <Route path="/dashbaord/*" element ={<DashboardPage/>}/>
-            <Route path="/home" element ={<HomePage/>}/>
-            <Route path="/category" element ={<CategoryPage/>}/>
+          <Route element={<PrivateRouter />}>
+            {/* Private routes */}
+            <Route path="/dashboard/*" element={<DashboardPage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/category" element={<CategoryPage />} />
           </Route>
-          <Route path="/" element ={<WelcomPage/>}/>
-          <Route path="/about" element ={<AboutUs/>}/>  
-          <Route path="/signup" element ={<SignUpPage/>}/>
-          <Route path="/signin" element ={<SignInPage/>}/>
+          {/* Public routes */}
+          <Route path="/" element={<WelcomPage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/editProduct" element={<EditForm />} />
+          <Route path="/addProduct" element={<AddProduct />} />;
+          <Route path="/PaySummary" element={<PaySummary />} />
+          <Route path="/ContactPage" element={< ContactPage />} />
+          
         </Routes>
-        {!hideFooter && <Footer/>}
+
+        {/* Show Footer only when not in hidden routes */}
+        {!shouldHideHeaderFooter && <Footer />}
       </div>
-    )
+    );
   }
 }
 
