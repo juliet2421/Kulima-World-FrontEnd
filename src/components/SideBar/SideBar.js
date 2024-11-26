@@ -18,7 +18,7 @@ function SideBar() {
             <li
             key={index}
             className={`h-12 flex items-center pl-10 ${
-              index === activeIndex ? "bg-blue-500" : ""
+              index === activeIndex ? "bg-green-500" : ""
             }`}           
             >
               <Link

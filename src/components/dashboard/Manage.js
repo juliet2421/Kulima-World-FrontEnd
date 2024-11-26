@@ -74,7 +74,7 @@ function Manage() {
       cell: (row) => (
         <div className="flex gap-2 w-32 h-10 px-6 ">
           <button
-            className="bg-blue-500 hover:bg-blue-600 w-16 active:bg-blue-700 text-white rounded-md py-4 "
+            className="bg-blue-500 hover:bg-blue-600 w-24 active:bg-blue-700 text-white rounded-md py-4 "
             onClick={() => editProduct(row)}
           >
             Edit
