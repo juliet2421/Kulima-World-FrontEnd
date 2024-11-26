@@ -27,28 +27,28 @@ function HomePage() {
           alt="Farmer Banner"
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 flex flex-col justify-center items-center text-center">
-          <p className="text-4xl md:text-5xl text-white font-bold">
-            WELCOME TO KULIMA WORLD YOUR ONLINE
-          </p>
-          <p className="text-4xl md:text-5xl text-white font-bold">
-            MARKETPLACE FOR ALL THINGS AGRICULTURE
-          </p>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 flex flex-col justify-between">
+          {/* Banner Text */}
+          <div className="mt-32 text-center">
+            <p className="text-4xl md:text-5xl text-white font-bold italic">
+              WELCOME TO KULIMA WORLD YOUR ONLINE
+            </p>
+            <p className="text-4xl md:text-5xl text-white font-bold italic mt-4">
+              MARKETPLACE FOR ALL THINGS AGRICULTURE
+            </p>
+          </div>
 
           {/* Buttons Section */}
-          <div className="mt-8 space-y-4">
-            {/* Get Started Button */}
-            <Link 
-              to="/SignIn" 
-              className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
+          <div className="absolute bottom-8 right-8 flex space-x-4">
+            <Link
+              to="/SignIn"
+              className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors shadow-lg"
             >
               Get Started
             </Link>
-
-            {/* Learn More About Us Button */}
-            <Link 
-              to="/About" 
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            <Link
+              to="/About"
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors shadow-lg"
             >
               Learn More About Us
             </Link>
