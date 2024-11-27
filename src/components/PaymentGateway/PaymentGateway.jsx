@@ -2,9 +2,9 @@ import React from 'react';
 import npaImage from './npa.png';
 import airtelImage from './airtel.png';
 
-const Payment = () => {
+const PaymentGateway= () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 relative">
+    <div className="min-h-screen flex items-center justify-center bg-green-100 relative">
       {/* Background Image */}
       <div
         className="absolute top-0 left-0 h-full w-1/3 bg-cover bg-center"
@@ -69,4 +69,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default  PaymentGateway;
