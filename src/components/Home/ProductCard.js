@@ -49,12 +49,14 @@ const ProductCard = ({ lists = [], searchTerm = "" }) => {
               <button className="bg-gray-600 text-white py-1 px-3 rounded opacity-80 mt-1 text-sm">
                   MK{price}
                 </button>
+               
                 <button
                   className="bg-green-600 text-white py-1 px-4 rounded-full mt-auto text-sm  transition duration-500 hover:scale-95"
                   onClick={() => goToPaymnet(val)}
                 >
                   Buy
-                </button>
+                   </button>
+                              
               </div>
             </div>
           );

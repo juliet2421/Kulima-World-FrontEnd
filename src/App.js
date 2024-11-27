@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import CategoryPage from "./Pages/CategoryPage";
 import DashboardPage from "./Pages/DashboardPage";
-import HomePage from "./Pages/HomePage";
 import SignUpPage from "./Pages/SignUpPage";
 import SignInPage from "./Pages/SignInPage";
 import WelcomPage from "./Pages/WelcomPage";
@@ -13,9 +12,11 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import EditForm from "./components/dashboard/editForm";
 import AddProduct from "./components/dashboard/AddProduct";
-import 'font-awesome/css/font-awesome.min.css';
+import "font-awesome/css/font-awesome.min.css";
 import PaySummary from "./components/Message/PaySummary";
 import ContactPage from "./components/Message/ContactPage";
+import Payment from "./components/PaymentGateway/PaymentGateway";
+import HomePage from "./Pages/HomePage";
 function App() {
   return (
     <BrowserRouter>
@@ -28,12 +29,12 @@ function App() {
 
     // Define the routes where the header and footer should be hidden
     const hiddenRoutes = [
-      '/',
-      '/signup',
-      '/signin',
-      '/dashboard',
-      '/addProduct',
-      '/editProduct',
+      "/",
+      "/signup",
+      "/signin",
+      "/dashboard",
+      "/addProduct",
+      "/editProduct",
     ];
 
     // Check if the current route matches any of the hidden routes
@@ -43,9 +44,6 @@ function App() {
 
     return (
       <div>
-        {/* Show Header only when not in hidden routes */}
-        {!shouldHideHeaderFooter && <Header />}
-
         {/* Routes for the application */}
         <Routes>
           <Route element={<PrivateRouter />}>
@@ -62,8 +60,9 @@ function App() {
           <Route path="/editProduct" element={<EditForm />} />
           <Route path="/addProduct" element={<AddProduct />} />;
           <Route path="/PaySummary" element={<PaySummary />} />
-          <Route path="/ContactPage" element={< ContactPage />} />
-          
+          <Route path="/ContactPage" element={<ContactPage />} />
+          <Route path="/Payment" element={<Payment />} />
+          <Route path="/header" element={<Header />} />
         </Routes>
 
         {/* Show Footer only when not in hidden routes */}
