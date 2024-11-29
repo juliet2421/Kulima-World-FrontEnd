@@ -1,30 +1,31 @@
 import React from "react";
 
 function Header() {
-    return (
-        <header className="bg-green-600 text-white shadow-md">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex justify-between items-center h-16">
-      {/* Logo */}
-      <div className="flex-shrink-0">
-        <a href="/" className="text-2xl font-bold">Kulima World</a>
-      </div>
+  return (
+    <header className="bg-green-600 text-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <a 
+              href="/" 
+              className="text-3xl font-extrabold text-gradient bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400 tracking-wide"
+              style={{ fontFamily: "'Pacifico', cursive" }}
+            >
+              Kulima World
+            </a>
+          </div>
 
-      {/* Navigation */}
-      <div className="flex space-x-8">
-        <a href="/" className="text-lg hover:text-green-200">Home</a>
-        <a href="/dashboard" className="text-lg hover:text-green-200">Dashboard</a>
+          {/* Navigation */}
+          <div className="flex flex-grow justify-evenly">
+            <a href="/Home" className="text-lg hover:text-green-200">Home</a>
+            <a href="/dashboard" className="text-lg hover:text-green-200">Dashboard</a>
+            <a href="/ContactPage" className="text-lg hover:text-green-200">FarmAssist</a>
+          </div>
+        </div>
       </div>
-
-      {/* User Profile Link (optional) */}
-      <div className="flex items-center space-x-4">
-        <a href="/profile" className="text-lg hover:text-green-200">Profile</a>
-      </div>
-    </div>
-  </div>
-</header>
-
-    );
-};
+    </header>
+  );
+}
 
 export default Header;

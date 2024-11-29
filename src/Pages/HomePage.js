@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { products } from "../components/data/Data";
 import ProductListing from "../components/Home/ProductListing";
 import Cartigory from "../components/Home/Cartigory";
+import Header from "../components/header/Header";
 
 
 export default function HomePage() {
