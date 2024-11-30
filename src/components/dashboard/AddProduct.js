@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function AddProduct() {
   const [productData, setProductData] = useState({
-    name: "",
+    productsName: "",
     description: "",
     price: "",
     category: "",
@@ -28,18 +29,46 @@ export default function AddProduct() {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit =  async(e) => {
     e.preventDefault();
-    // Logic to submit the form data to an API or database
+      const form = new FormData();
+      Object.keys(productData).forEach((keys)=> {
+        form.append(keys,productData[keys]);
+      })
+ 
+      try {
+        const response = await axios.post("http://localhost:3000/api/products",form,{
+          headers:{
+            "Content-Type": "multipart/form-data"
+         } 
+        })
+           // Alert for successful submission
+           alert("Listing submitted successfully!");
+           console.log("Data sent", response.data);
+           
+           // Reset form data after successful submission
+           setProductData({
+            productsName: "",
+            description: "",
+            price: "",
+            category: "",
+            image: null,
+          });
+      } catch (error) {
+        if(error.response && error.response.data) {
+          console.log(error.response.data.error)
+          alert("Faild to submit the form. check that all fiid are filled and try again!");
+        }else{
+          console.log(`error${error.message}`)
+          alert("Faild to submit the form. check that all fiid are filled and try again!");
+        }
+       
+      }
+
+    //endcode
     console.log("Form submitted with data:", productData);
     // Reset form after submission
-    setProductData({
-      name: "",
-      description: "",
-      price: "",
-      category: "",
-      image: null,
-    });
+   
   };
 
   return (
@@ -57,8 +86,8 @@ export default function AddProduct() {
             <input
               type="text"
               id="name"
-              name="name"
-              value={productData.name}
+              name="productsName"
+              value={productData.productsName}
               onChange={handleChange}
               className="w-full p-3 border rounded focus:outline-none focus:border-green-500"
               required
